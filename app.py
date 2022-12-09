@@ -136,6 +136,9 @@ def crudInactivos():
 
 
 
+@app.route('/fix')
+def crudInactivos():
+    return render_template('calendario.html')
 
 
 
