@@ -8,37 +8,85 @@
 
 <!-- Content wrapper -->
 <div class="content-wrapper">
-    <!-- Content -->
+  <!-- Content -->
 
-    <div class="container-xxl flex-grow-1 container-p-y">
-      <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Metas /</span>  Lista Metas</h4>
-
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="nav nav-pills flex-column flex-md-row mb-3">
-            <li class="nav-item">
-                <a class="nav-link" id="creacion"
-                  ><i class="bx bx-user me-1"></i> Creacion Meta</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="javascript:void(0);"
-                  ><i class="bx bx-bell me-1"></i> Lista Metas</a >
-              </li>
-
-          </ul>
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Reporte /</span> Deuda  Usuarios</h4>
 
 
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills flex-column flex-md-row mb-3">
+          
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="listaUsuarios"
+              ><i class="bx bx-bell me-1"></i> Lista Clientes con Deudas</a >
+          </li>
+
+
+
+
+      </ul>
+
+
+          <div class="card">
+            <h5 class="card-header">Usuarios  Inactivos</h5>
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>nombre</th>
+                    <th>Deuda</th>
+
+
+
+                  </tr>
+                </thead>
+
+                <tbody class="table-border-bottom-0" >
+                  {% for i in listaa%}
+
+                 
+                  <form action="/borrar/{{i.nombre}}" method="POST">
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{i.name}}</strong></td>
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{i.deuda}}</strong></td>
+
+                  </form>
+
+
+ 
+                    
+                  </tr>
+
+
+
+
+          
+
+
+
+                  {% endfor %}       
 
 
 
 
 
     <script type="text/javascript">
-
         document.getElementById("creacion").onclick = function () {
-                    location.href = "/metas";
+                    location.href = "/creacion-usuarios";
         };
-   
-  </script>
+
+        document.getElementById("listaUsuarios").onclick = function () {
+          location.href = "/crud-lista";
+      };
+
+    </script>
+
+    
+
+
+
+
 
 {% endblock %}

@@ -107,10 +107,17 @@ def agregarusuario(nombre):
 
 
 
+
+
 @app.route('/reporte' ,methods=["GET", 'POST'])
 def report() :
-    usuario=usuario_ingresado[0]
-    return render_template('reporte.html',data=usuario)
+    listain=list(records.find())
+    return render_template('listametas.html',listaa=listain)
+
+
+
+
+
 
 
 
@@ -125,6 +132,7 @@ def crudUsuarios():
 def crudInactivos():
     listain=list(records.find())
     return render_template('usuarioin.html',listaa=listain)
+
 
 
 
