@@ -3,7 +3,6 @@ from config import config
 from werkzeug.security import generate_password_hash, check_password_hash
 from pymongo import MongoClient
 from cliente import Cliente
-from gevent.pywsgi import WSGIServer
 
 
 
@@ -146,5 +145,5 @@ def crudInat():
 
 
 if __name__=='__main__':
-    http_server = WSGIServer(('', 5000), app)
-    http_server.serve_forever()
+    app.config.from_object(config['development'])
+    app.run()
