@@ -1,0 +1,125 @@
+{% extends './main.html'%}
+
+
+{% block title %} {% endblock%}
+
+
+{% block body %}
+
+<!-- Content wrapper -->
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Usuarios /</span> Lista Usuarios</h4>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills flex-column flex-md-row mb-3">
+          <li class="nav-item">
+            <a class="nav-link" id="creacion"
+              ><i class="bx bx-user me-1"></i> Creacion Usuario</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="javascript:void(0);"
+              ><i class="bx bx-bell me-1"></i> Lista Usuarios Activos</a >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" id="listaUsuariosinactivos"
+              ><i class="bx bx-bell me-1"></i> Lista Usuarios Inactivos</a
+            >
+          </li>
+
+
+      </ul>
+
+
+          <div class="card">
+            <h5 class="card-header">Usuarios Activos</h5>
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>btnn</th>
+                    <th>btnn</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Documento</th>
+                    <th>Sgi</th>
+                    <th>Contraseña</th>
+                    <th>Correo</th>
+                    <th>Permisos</th>
+                    <th>Creado por</th>
+                    <th>Fecha creacion por</th>
+                    <th> Mod por</th>
+                    <th> Fecha modif</th>
+                    <th>Delete por</th>
+                    <th>Fecha Delete</th>
+
+
+
+                  </tr>
+                </thead>
+
+                <tbody class="table-border-bottom-0" >
+                  {% for i in lista%}
+
+                 
+
+                  <form action="/edit/{{i.nombre}}" method="POST">
+                    <td><button class="btn btn-primary btn-sm mt-3" type="submit">Editar</button> </td>
+                    <td> <a href="{{url_for('delete', name=i.nombre)}}" class="btn btn-danger btn-sm mt-3">Eliminar</a></td>
+                    <td> <input type="text" class="form-control" value="{{i.nombre}}" name="nombre" > </td>
+                    <td>  <input type="text" class="form-control" value="{{i.apellido}}" name="apellido">  </td>
+                    <td> <input type="text" class="form-control" value="{{i.documento}}" name="documento"> </td>
+                    <td> <input type="text" class="form-control" value="{{i.sgi}}" name="sgi"></td>
+                    <td> <input type="text" class="form-control" value="{{i.contraseña}}" name="contrasena"> </td>
+                    <td>  <input type="text" class="form-control" value="{{i.correro}}" name="correo"> </td>
+                    <td>  <input type="text" class="form-control" value="{{i.permisos}}" name="permisos"> </td>
+                    <td> {{i.creado_por}} </td>
+
+                    <td> {{i.fechacreado}} </td>
+                    <td>  {{i.mod_por}}</td>
+                    <td>  {{i.fecha_mod}}  </td>
+                    <td>   {{i.delete_por}}  </td>
+                    <td>   {{i.fecha_delete}} </td>
+                  </form>
+ 
+                    
+                  </tr>
+
+
+
+
+          
+
+
+
+                  {% endfor %}       
+
+
+
+
+    <script type="text/javascript">
+        document.getElementById("creacion").onclick = function () {
+                    location.href = "/creacion-usuarios";
+        };
+
+        document.getElementById("listaUsuariosinactivos").onclick = function () {
+                    location.href = "/crud-listain";
+        };
+
+
+
+
+
+    </script>
+
+
+
+
+
+{% endblock %}

@@ -1,16 +1,105 @@
 from flask import Flask,render_template,url_for,redirect,request,jsonify,Response
 from config import config
+from werkzeug.security import generate_password_hash, check_password_hash
+from pymongo import MongoClient
+
 
 
 
 app=Flask(__name__)
 
 
+
+client = MongoClient("mongodb+srv://SantiagoVela:millos2011@cluster0.y1njt.mongodb.net/?retryWrites=true&w=majority")
+db = client.get_database('avanzo')
+
+records=db.db_ava
+
+
+
+
+
+
+
+usuario_ingresado=[]
+
+
+
+@app.route('/' )
+def index():
+    return redirect(url_for('login'))
+
+
+
 @app.route("/login", methods=["GET", 'POST'])
 def login():
 
-    return render_template("index.html")
+    centinela=False
+    if request.method == 'POST':
 
+        if len(usuario_ingresado)>0:
+            for i in range(len(usuario_ingresado)):
+                usuario_ingresado.pop()
+
+        user=request.form['username']
+        passs =request.form['password']
+
+        user_log=records.find_one({'name': user})
+
+
+        contra=user_log["apellido"]
+
+
+        if   check_password_hash( contra,passs) :
+
+            print("perrrrrrrrraaaaaaaaa")
+            
+            usuario_ingresado.append(user_log["name"])
+
+            return agregarusuario(user_log["name"])
+
+
+
+
+        elif check_password_hash(contra, passs):
+
+            usuario_ingresado.append(user_log["nombre"])
+
+            return agregarusuario(user_log["nombre"])
+
+    else:
+        return render_template("signup_form.html")
+
+
+
+
+
+@app.route('/agregar', methods=["GET", 'POST'])
+def agregarusuario(nombre):
+
+
+    return render_template('main.html',data=nombre)
+
+
+
+@app.route('/reporte' ,methods=["GET", 'POST'])
+def report() :
+    usuario=usuario_ingresado[0]
+    return render_template('reporte.html',data=usuario)
+
+
+
+@app.route('/creacion-usuarios')
+def crudUsuarios():
+
+    return render_template('prueba2.html')
+
+
+
+@app.route('/crud-lista')
+def crudInactivos():
+    listain=list(records.find())
+    return render_template('usuarioin.html',listaa=listain)
 
 
 
@@ -22,4 +111,4 @@ def login():
 
 if __name__=='__main__':
     app.config.from_object(config['development'])
-    app.run( )
+    app.run(port=3000)

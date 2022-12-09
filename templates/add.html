@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script defer src="https://kit.fontawesome.com/16fda319fc.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Calendario de Metas</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/add"> Agregar Meta</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/calendario">Calendar</a>
+              </li>
+           
+          
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Buscar Meta" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+      
+          <div class="container my-3">
+              <div id="calendar"></div>
+          </div>
+    <div class="container">
+        <form action="/add" method="POST">
+            <div class="mb-3">
+              <label for="title" class="form-label">Nombre de meta</label>
+              <input type="text" class="form-control"  name="title" id="title" placeholder="Ingrese el nombre de la meta: " >
+            </div>
+            <div class="mb-3">
+              <label for="start" class="form-label">Fecha inicio</label>
+              <input type="text" class="form-control"  name="start" id="start" placeholder="Formato is  YYYY-MM-DDTHH">
+            </div>
+            <div class="mb-3">
+                <label for="end" class="form-label">Fecha final</label>
+                <input type="text" class="form-control"  name="end" id="end" placeholder="Dejelo vacio si meta es de todo un dia ">
+              </div>
+            <div class="mb-3">
+                <label for="url" class="form-label">Meta url</label>
+                <input type="url" class="form-control"  name="url" id="url" placeholder="leave empty if you have no url">
+            </div>
+ 
+            <button type="submit" class="btn btn-outline-dark">Agregar</button>
+          </form>
+    </div>
+    
+</body>
+</html>

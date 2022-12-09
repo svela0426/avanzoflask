@@ -1,0 +1,102 @@
+/* Add your styles here */
+
+i{
+  font-size: 60px;
+  position: absolute;
+  top: 4%;
+  left: 5%;
+
+}
+
+
+.oee{
+
+    /* centrado vertical */
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  transition-duration: 0.4s;
+  font-size: 200px;
+  font-family: 'Signika Negative', sans-serif;
+}
+
+
+.contu {
+    ...
+    position: relative;
+}
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: 70% 50% ;
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    font-family: 'Signika Negative', sans-serif;
+
+  
+  }
+
+.botoon{
+    width: 300px;
+    height: 100px;
+      /* centrado vertical */
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transition-duration: 0.4s;
+    border-radius: 20%;
+    border: none;
+    background-color: rgb(49, 49, 50);
+    color:rgb(255, 255, 255);
+
+
+}
+
+.botoon:hover {
+  background-color: rgba(49, 49, 50, 0.747);
+}
+
+.botoon1{
+    width: 300px;
+    height: 100px;
+        /* centrado vertical */
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    transition-duration: 0.4s;
+    border-radius: 20%;
+    border: none;
+    background-color: rgb(49, 49, 50);
+    color:rgb(255, 255, 255);
+
+
+}
+
+.botoon1:hover {
+  background-color: rgba(49, 49, 50, 0.747);
+}
+
+.botoon2{
+    width: 300px;
+    height: 100px;
+      /* centrado vertical */
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    transition-duration: 0.4s;
+    border-radius: 20%;
+    border: none;
+    background-color: rgb(49, 49, 50);
+    color:rgb(255, 255, 255);
+
+
+}
+
+.botoon2:hover {
+  background-color: rgba(49, 49, 50, 0.747);
+}
+    
+

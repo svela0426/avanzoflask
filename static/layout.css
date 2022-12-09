@@ -1,0 +1,147 @@
+/* Add your styles here */
+
+body{
+  background-color: rgb(30, 30, 46);
+}
+.contenedor {
+  ...
+  
+  position: relative;
+}
+.dot {
+  height: 500px;
+  width: 400px;
+  top: 17%;
+  left: 37%;
+  border-radius: 5%;
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+  position: absolute;
+
+}
+
+.hijo {
+ font-size: 60px;
+  /* centrar vertical y horizontalmente */
+  position: absolute;
+  font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  top: 25%;
+  left: 49%;
+  
+  margin: -25px 0 0 -25px; /* aplicar a top y al margen izquierdo un valor negativo para completar el centrado del elemento hijo */
+}
+
+.contenedorR {
+...
+  
+  position: relative;
+}
+
+.SON {
+  width: 100px;
+  height: 30px;
+  /* centrado vertical */
+  position: absolute;
+  top: 60%;
+  left: 47%;
+  transition-duration: 0.4s;
+  background-color: rgba(56, 36, 88, 0.233);
+  border-radius: 20%;
+
+}
+
+
+
+
+.SON:hover {
+  background-color: rgba(49, 49, 50, 0.747);
+}
+
+
+.container {
+  ...
+  position: relative;
+}
+
+.cont1 {
+  width: 300px;
+  height: 30px;
+  /* centrado vertical */
+  position: absolute;
+  top: 50%;
+  left: 41%;
+  border-radius: 10%;
+  border-color: rgb(165, 164, 163);
+
+
+}
+
+
+.cambio {
+  width: 300px;
+  height: 30px;
+  /* centrado vertical */
+  position: absolute;
+  top: 35%;
+  left: 47%;
+  border-radius: 10%;
+  border-color: rgb(165, 164, 163);
+
+
+}
+
+.container2 {
+  ...
+  position: relative;
+}
+
+.container3 {
+  ...
+  position: relative;
+}
+
+.cont2 {
+  width: 300px;
+  height: 30px;
+  position: absolute;
+  top: 42%;
+  left: 41%;
+  border-radius: 10%;
+
+  border-color: rgb(165, 164, 163);
+
+
+}
+
+.container i{
+  font-size: 20px;
+  position: absolute;
+  top: 51%;
+  left: 39%;
+  color:  rgb(153, 155, 164);
+
+}
+
+.contenedorR i {
+   font-size: 20px;
+  position: absolute;
+  top: 43%;
+  left: 39%;
+  color:  rgb(153, 155, 164);
+
+
+  
+}
+
+
+
+.vidrio {
+  position: absolute;
+  top: 4%;
+  left: 10%;
+  color:  rgb(249, 249, 249);
+   font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+

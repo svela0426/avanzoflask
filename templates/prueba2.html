@@ -1,0 +1,126 @@
+{% extends './main.html'%}
+
+
+{% block title %} {% endblock%}
+
+
+{% block body %}
+
+<!-- Content wrapper -->
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Clientes /</span> Cliente Nuevo</h4>
+
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-pills flex-column flex-md-row mb-3">
+            
+            <li class="nav-item">
+              <a class="nav-link active" ><i class="bx bx-user me-1"></i> Creacion Clientes</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" id="listaUsuarios"
+                ><i class="menu-icon tf-icons bx bx-detail"></i> Lista Clientes</a
+              >
+            </li>
+
+
+
+
+
+  
+          </ul>
+          <div class="card mb-4">
+            <h5 class="card-header">Detalles Clientes</h5>
+            <!-- Account -->
+            <hr class="my-0" />
+            <div class="card-body">
+
+              <form action="/creacion" method="POST" >
+
+                <div class="row">
+       
+                  <div class="mb-3 col-md-6">
+                    <label for="firstName" class="form-label"> Nombre</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      placeholder=" Primer nombre : "
+                    />
+                  </div>
+                  <div class="mb-3 col-md-6">
+                    <label for="lastName" class="form-label"> Apellido</label>
+                    <input class="form-control" type="text" name="apellido" id="apellido" placeholder=" Primer apellido :" />
+                  </div>
+                 
+                  <div class="mb-3 col-md-6">
+                    <label for="organization" class="form-label">Documento</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="documento"
+                      name="documento"
+                      placeholder="Cedula :"
+
+                    />
+                  </div>
+
+
+
+                  <div class="mb-3 col-md-6">
+                    <label for="address" class="form-label">Contraseña</label>
+                    <input type="text" class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña :" />
+                  </div>
+
+
+                  <div class="mb-3 col-md-6">
+                    <label for="state" class="form-label">Correo</label>
+                    <input class="form-control" type="text" id="correo" name="correo" placeholder="Correo :" />
+                  </div>
+
+
+                 
+
+
+
+
+
+          
+
+             
+                <div class="mt-2">
+                  <button type="submit" class="btn btn-primary me-2"> Crear Cliente</button>
+                  <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+                </div>
+              </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / Content -->
+
+
+    <div class="content-backdrop fade"></div>
+
+
+
+    <script type="text/javascript">
+      document.getElementById("listaUsuarios").onclick = function () {
+          location.href = "/crud-lista";
+      };
+
+
+      document.getElementById("listaUsuariosinactivos").onclick = function () {
+                    location.href = "/crud-listain";
+        };
+        
+  </script>
+
+{% endblock %}

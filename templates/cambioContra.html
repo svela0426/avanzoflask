@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio contraseña</title>
+
+
+    <link rel="stylesheet" href="static/css/layout2.css">
+    <link rel="stylesheet" href="static/css/btnn.css"  />
+    <link rel="stylesheet" href="static/css/layy.css"  />
+    <link rel="stylesheet" href="static/css/btnn.css"  />
+    <link rel="stylesheet" href="static/css/try.css" />
+  
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+
+
+    <span class="dot"></span>
+     
+
+    <div class="contenedor">
+      <div class="vidrio"> Vidrio Andino</div>
+
+        <div class="hijo"> OEE</div>
+        </div>
+        <div class="cambio"> Cambio contraseña</div>
+
+    
+      <div class="contenedorR">
+      <form  action="/cambioC" method="POST">
+     
+        <button   class="SON" type="submit"> cambiar </button>
+        <a href="{{url_for('login')}}" class="btn btn-danger btn-sm mt-3">volver</a>
+
+        <i class='bx bx-user'></i>
+        </div>
+      
+         <div class="container">
+        <input type="password" class="cont1" name="contra2" id="contra2" placeholder=" Ingrese su contraseña Nueva">
+           <i id="cancado"class='bx bx-lock-alt'></i>
+           
+        </div>
+          
+        <div class="container2">
+          <input  class="cont2" name="contra1" id="contra1" placeholder="Ingrese su cedula ">
+      </form> 
+
+    </div>  
+
+
+
+    
+
+    
+</body>
+</html>

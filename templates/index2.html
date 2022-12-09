@@ -1,0 +1,71 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="static/css/btn.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+
+    </head>
+    <body>
+
+
+        
+
+    
+
+
+        <div class="contu">
+
+            <i id="flecha" class='bx bx-left-arrow-alt'></i>
+            <div class="grid"> <!-- contenedor -->
+                <h1 class="b">Bienvenido</h1>
+                <h1 class="a">{{data}}</h1> 
+            </div>
+            <h1 class="oee">OEE</h1> 
+
+            
+            <button type="submit" name="botoon" id= "botoon"class="botoon" action="agregar" method="post">Reporte </button>
+            <button type="submit"   name="botoon1" id= "botoon1"class="botoon1">Metas </button>
+            <button type="submit"   name="botoon2" id= "botoon2" class="botoon2">historial </button>
+            
+        </div>
+
+        <script type="text/javascript">
+            document.getElementById("botoon").onclick = function () {
+                location.href = "/reporte";
+            };
+
+            document.getElementById("botoon2").onclick = function () {
+                location.href = "/calendario";
+            };
+            document.getElementById("flecha").onclick = function () {
+                location.href = "/";
+            };
+            document.getElementById("botoon1").onclick = function () {
+                location.href = "/metas";
+            };
+
+
+
+
+        </script>
+
+        
+        
+            
+        
+        
+
+
+
+        
+        
+    </body>
+    </html>

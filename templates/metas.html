@@ -1,0 +1,128 @@
+{% extends './main.html'%}
+
+
+{% block title %} {% endblock%}
+
+
+{% block body %}
+
+<!-- Content wrapper -->
+<div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Metas /</span> Creacion Meta</h4>
+
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-pills flex-column flex-md-row mb-3">
+            <li class="nav-item">
+              <a class="nav-link active" ><i class="bx bx-user me-1"></i> Creacion Meta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="listaUsuarios"
+                ><i class="menu-icon tf-icons bx bx-detail"></i> Lista Metas</a>
+            </li>
+
+          </ul>
+
+
+          <div class="card mb-4">
+            <h5 class="card-header">Detalles Meta </h5>
+            <!-- Account -->
+            <hr class="my-0" />
+            <div class="card-body">
+            <div>
+
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                 <h1 >Meta Anual Actual:</h1>
+                </div>
+             
+              <div class="mb-3 col-md-6">
+               <h1>500/600</h1>
+              </div>
+
+
+
+              <form action="/crud-metas" method="POST" >
+
+               
+                <div class="row">
+                  <div class="mb-3 col-md-6">
+                    <label for="activo" class="form-label">Meta Proyectada</label>
+
+                    <select id="turno" name="turno" class="form-select form-select-lg">
+                      <option > turno: </option>
+                      <option value="diurno""> diurno </option>
+                      <option value="nocturno""> nocturno </option>
+                      <option value="Madrugada"> Madrugada </option>
+                    </select>
+
+                  </div>
+
+
+
+                  
+                  
+                  <div class="mb-3 col-md-6">
+                    <label for="activo" class="form-label">Meta Real</label>
+
+                    <select id="ancho" name="ancho" class="form-select form-select-lg2">
+                      <option > 0 cm </option>
+                      <option value="1 cm"> 1 cm </option>
+                      <option value="2 cm"> 2 cm </option>
+                      <option value="3 cm"> 3 cm </option>
+                      <option value="4 cm"> 4 cm </option>
+                      <option value="5 cm"> 5 cm </option>
+                      <option value="6 cm"> 6 cm </option>
+                      <option value="7 cm"> 7 cm </option>
+                      <option value="8 cm"> 8 cm </option>
+                      <option value="9 cm"> 9 cm </option>
+                      <option value="10 cm"> 10 cm </option>
+                    </select>
+
+                  </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="mb-3 col-md-6">
+                      <label for="firstName" class="form-label"> Fecha inicio</label>
+                      <input class="form-control" type="date" placeholder="Select DateTime">
+
+                    </div>
+                 
+                  <div class="mb-3 col-md-6">
+                    <label for="organization" class="form-label">Fecha final</label>
+                    <input class="form-control" type="date" >
+                  </div>
+
+                  
+
+              
+             
+                <div class="mt-2">
+                  <button type="submit" class="btn btn-primary me-2"> Crear Meta</button>
+                  <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+                </div>
+              </form>
+            </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+
+
+        document.getElementById("listaUsuarios").onclick = function () {
+                    location.href = "/listametas";
+        };
+   
+  </script>
+
+{% endblock %}

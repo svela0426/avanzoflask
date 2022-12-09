@@ -1,0 +1,96 @@
+{% extends './main.html'%}
+
+
+{% block title %} {% endblock%}
+
+
+{% block body %}
+
+<!-- Content wrapper -->
+<div class="content-wrapper">
+  <!-- Content -->
+
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Usuarios /</span> Lista Usuarios</h4>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="nav nav-pills flex-column flex-md-row mb-3">
+          <li class="nav-item">
+            <a class="nav-link" id="creacion"
+              ><i class="bx bx-user me-1"></i> Creacion Clientes</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="listaUsuarios"
+              ><i class="bx bx-bell me-1"></i> Lista Clientes Activos</a >
+          </li>
+
+
+
+
+      </ul>
+
+
+          <div class="card">
+            <h5 class="card-header">Usuarios  Inactivos</h5>
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>btnn</th>
+                    <th>ID</th>
+                    <th>Nombre</th>
+
+
+
+                  </tr>
+                </thead>
+
+                <tbody class="table-border-bottom-0" >
+                  {% for i in listaa%}
+
+                 
+                  <form action="/borrar/{{i.nombre}}" method="POST">
+                    <td><button class="btn btn-primary btn-sm mt-3" type="submit">Activar</button> </td>
+                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{i.name}}</strong></td>
+
+                  </form>
+
+
+ 
+                    
+                  </tr>
+
+
+
+
+          
+
+
+
+                  {% endfor %}       
+
+
+
+
+
+    <script type="text/javascript">
+        document.getElementById("creacion").onclick = function () {
+                    location.href = "/creacion-usuarios";
+        };
+
+        document.getElementById("listaUsuarios").onclick = function () {
+          location.href = "/crud-lista";
+      };
+
+    </script>
+
+    
+
+
+
+
+
+{% endblock %}
