@@ -1,7 +1,9 @@
+from http.client import NOT_FOUND
 from flask import Flask,render_template,url_for,redirect,request,jsonify,Response
 from config import config
 from werkzeug.security import generate_password_hash, check_password_hash
 from pymongo import MongoClient
+from cliente import Cliente
 
 
 
@@ -47,7 +49,7 @@ def login():
         user_log=records.find_one({'name': user})
 
 
-        contra=user_log["apellido"]
+        contra=user_log["contrasena"]
 
 
         if   check_password_hash( contra,passs) :
@@ -69,6 +71,28 @@ def login():
 
     else:
         return render_template("signup_form.html")
+
+
+
+@app.route('/creacion',methods=['POST'] )
+def prueba() :
+
+    nombre=request.form['nombre']
+    apellido = request.form['apellido']
+    contrasena=request.form['contrasena']
+    empresa=request.form['empresa']
+
+
+    if  nombre and apellido  and empresa and contrasena :
+
+        contra=generate_password_hash(contrasena)
+        product = Cliente(nombre, apellido,empresa,contra )
+        records.insert_one(product.toDBCollection())
+       
+    
+        return redirect(url_for('crudUsuarios')) 
+    else:
+        return NOT_FOUND()
 
 
 
