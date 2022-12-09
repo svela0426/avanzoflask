@@ -4,6 +4,6 @@ from distutils.debug import DEBUG
 
 
 class DevelopmentConfig():
-    DEBUG=True
+    DEBUG=False
 
 config={'development':DevelopmentConfig}
