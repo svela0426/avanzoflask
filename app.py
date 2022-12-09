@@ -81,12 +81,13 @@ def prueba() :
     apellido = request.form['apellido']
     contrasena=request.form['contrasena']
     empresa=request.form['empresa']
+    deuda="$0"
 
 
     if  nombre and apellido  and empresa and contrasena :
 
         contra=generate_password_hash(contrasena)
-        product = Cliente(nombre, apellido,empresa,contra )
+        product = Cliente(nombre, apellido,empresa,contra,deuda )
         records.insert_one(product.toDBCollection())
        
     
